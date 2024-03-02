@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: brown;
+        font-size: 3em;
+      }
+      p {
+        color: green;
+      }
+      img {
+        width: 30%;
+        border: 10px dotted goldenrod;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Cafe time</h1>
+    <hr />
+    <h3>咖啡的歷史起源</h3>
+    <p>
+      咖啡的來源已無從稽考。諸多傳說之一指咖啡原產於衣索比亞（Ethiopia）西南部的咖法省高原地區，據說是一位牧羊人發現羊吃了一種植物後，變得非常興奮活潑，因此發現了咖啡。
+    </p>
+    <h3>咖啡樹的品種</h3>
+    <p>
+      阿拉比卡咖啡(Arabica coffee) 原產於東非伊索比亞南部的阿比西
+      尼亞高原，現今沿海尚有野生種。
+    </p>
+    <p>
+      羅布斯塔咖啡(Robusta coffee) 羅布斯塔咖啡屬於剛果咖啡的突變
+      種，原產於西非剛果，本種有缺乏香氣之 憾，苦味較強，酸味不足。
+    </p>
+    <p>
+      利比亞咖啡(Liberia coffee) 原產於西非利比亞，本種香味不佳，
+      苦味較強。除少數生產國自己消費外，只 有歐洲人飲用利比亞咖啡。
+    </p>
+    <img
+      src="images/coffee/bean3.png"
+      alt=""
+      onclick="cta()"
+      onmouseover="setBG(this)"
+      onmouseout="clearBG(this)"
+    />
+    <script>
+      function cta() {
+        alert("咖啡豆買一包送兩包");
+      }
+      function setBG(obj) {
+        obj.style.backgroundColor = "lightgreen";
+      }
+      function clearBG(obj) {
+        obj.style.backgroundColor = "initial";
+      }
+    </script>
+  </body>
+</html>
