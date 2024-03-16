@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--<link href="/static/css/mystyle.css" rel="stylesheet" type="text/css"> -->
+    <!--傳統作法-->
+
+    <link href="{% static 'css/mystyle.css' %}" rel="stylesheet" type="text/css" />
+
+     <script src="/static/js/myjs.js"></script> 傳統作法
+     <!-- <script src="{% static 'js/myjs.js' %}"></s cript> -->
+
+    <style>
+      h3 {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>咖啡樹的品種 Coffee Bean</h1>
+    <hr />
+    <h3>阿拉比卡咖啡(Arabica coffee)</h3>
+    <p>原產於東非伊索比亞南部的阿比西 尼亞高原，現今沿海尚有野生種。</p>
+    <!-- <img src="{% static 'images/arabica.png'}" /> -->
+    <img src="{% static 'images/arabica.png' %}" style="border:1px solid green" onclick="window.alert('阿拉比卡咖啡(Arabica coffee),讚')" >
+
+    <h3>羅布斯塔咖啡(Robusta coffee)</h3>
+    <p>
+      羅布斯塔咖啡屬於剛果咖啡的突變 種，原產於西非剛果，本種有缺乏香氣之
+      憾，苦味較強，酸味不足。
+    </p>
+    <img src="{% static 'images/robusta.png' %}" />
+
+    <h3>利比亞咖啡(Liberia coffee)</h3>
+    <p>
+      原產於西非利比亞，本種香味不佳， 苦味較強。除少數生產國自己消費外，只
+      有歐洲人飲用利比亞咖啡。
+    </p>
+    <img src="{% static 'images/liberia.png' %}" />
+
+    <hr />
+    <table>
+      <tr>
+        <th>咖啡樹</th>
+        <th>售價</th>
+      </tr>
+
+      <tr>
+        <td>阿拉比卡咖啡(Arabica coffee)</td>
+        <td>500</td>
+      </tr>
+
+      <tr>
+        <td>羅布斯塔咖啡(Robusta coffee)</td>
+        <td>450</td>
+      </tr>
+
+      <tr>
+        <td>利比亞咖啡(Liberia coffee)</td>
+        <td>300</td>
+      </tr>
+    </table>
+
+    <script>
+      document.querySelectorAll("img")[1].onclick = function () {
+        window.alert("羅布斯塔咖啡(Robusta coffee) ,讚");
+      };
+
+      document.querySelectorAll("img")[2].onclick = function () {
+        window.alert("利比亞咖啡(Liberia coffee) ,讚");
+      };
+
+      var img = document.querySelectorAll("img");
+      console.log(typeof img, img.length);
+
+      for (var i = 0; i < img.length; i++) {
+        img[i].onmouseover = function () {
+          console.log(i);
+          setBG(this);
+        };
+
+        img[i].onmouseout = function () {
+          clearBG(this);
+        };
+      }
+    </script>
+  </body>
+</html>
