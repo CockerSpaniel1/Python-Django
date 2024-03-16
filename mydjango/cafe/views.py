@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template.loader import get_template
+import random
 
 # Create your views here.
 def index(request):
@@ -32,3 +34,20 @@ def tea1(request):
 def coffee2(request):
     return render(request,"coffee/coffee2.html")
 
+def coffee3(request):
+    return render(request,"coffee/coffee3.html",{
+        "name":"阿拉比卡","price":500,"qty":10
+    })
+def coffee4(request):
+    promo ="世界咖啡節，全面買一送一"
+    item={
+        "name":"羅布斯塔", "price":450, "qty":10
+    }
+
+    return render(request,"coffee/coffee4.html", locals())
+
+def coffee5(request):
+    template = get_template("coffee/coffee5.html")
+    item = ["抹茶拿鐵","美式咖啡","義式咖啡","卡布奇諾"]
+    html = template.render({"item":random.choice(item)})
+    return HttpResponse(html)

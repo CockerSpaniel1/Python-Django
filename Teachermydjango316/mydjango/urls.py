@@ -15,27 +15,71 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from cafe.views import *
+from django.urls import path,include
+from cafe.views import index,coffee,slogan,history,coffee1,coffee2,coffee6,coffee3,coffee4,coffee5
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-]
-urlpatterns += [
-    path('',  index),
-    path('coffeeWeb',  coffee),
+    path('coffee',coffee)
 ]
 
-urlpatterns += [
-    path("slogan",  slogan),
-    path("history",  history),
-    path("coffeeWeb1",coffee1),
-    path("coffee3", coffee3),
-    path("coffee4", coffee4),
-    path("coffee5", coffee5),
+urlpatterns +=[
+    path('',index)
 ]
 
-urlpatterns += [
-    path("", include("cafe.urls"))
+urlpatterns +=[
+    path('slogan',slogan),
+    path('history',history)
 ]
+
+
+urlpatterns +=[
+    path('coffee1',coffee1),
+    path('coffee2',coffee2),
+    path('coffee3',coffee3),
+    path('coffee4',coffee4),
+    path('coffee5',coffee5),
+]
+
+urlpatterns +=[
+    path('',include('cafe.urls')),
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+urlpatterns +=[
+  
+    path('coffee6',coffee6),
+]
+
