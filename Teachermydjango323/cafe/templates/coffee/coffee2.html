@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>框架與表單, 使用JS 處理</title>
+</head>
+<body>
+
+    <h1>咖啡訂購系統</h1>
+    <hr>
+    <input type="text" placeholder="enter name"  id="name"><br>
+    <input type="number" placeholder="enter price" id="price" ><br>
+    <input type="number" placeholder="enter qty" id="qty"><br>
+
+    <button onclick="onsale()">OK</button>
+    <img src="{% static 'images/cup.png' %}" id="cup">
+    <div id="demo"></div>
+
+    <script src="{% static 'js/myjs.js' %}"></script>
+    <script src="{% static 'js/yourjs.js' %}"></script>
+    
+</body>
+</html>

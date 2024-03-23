@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 網頁範本 {% endblock %}
+{% block content %}
+    <h1>咖啡豆的介紹</h1>
+    <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="col">
+            <img src="{% static 'images/arabica.png' %}">
+            <p>阿拉比卡</p>
+          </div>
+          <div class="col">
+            <img src="{% static 'images/robusta.png' %}">
+            <p>羅布斯塔</p>
+          </div>
+          <div class="col">
+            <img src="{% static 'images/liberia.png' %}">
+            <p>利比亞</p>
+          </div>
+        </div>
+      </div>
+{% endblock %}

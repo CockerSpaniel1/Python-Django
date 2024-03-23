@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 日期與時間 {% endblock %}
+{% block content %}
+    <h1>咖啡豆的介紹</h1>
+    <div class="container text-center">
+        <div class="row">
+            {% for i in coffee %}
+                <div class="col">
+                    {% if hour <= 8 %}<img src="{% static 'images/' %}{{i.image}}" style="background-color:black;">
+                    {% elif hour <= 17 %}<img src="{% static 'images/' %}{{i.image}}" style="background-color:blue;">
+                    {% else %}<img src="{% static 'images/' %}{{i.image}}">
+                    {% endif %}
+                    <p>{{i.name}}</p>
+                </div>
+            {% endfor %}
+        </div>
+      </div>
+{% endblock %}
