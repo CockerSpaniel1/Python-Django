@@ -34,8 +34,21 @@ urlpatterns += [
     path("coffee3", coffee3),
     path("coffee4", coffee4),
     path("coffee5", coffee5),
+    path("coffee6", coffee6),
+    path("coffee7", coffee7),
+    path("coffee8", coffee8),
+    path("coffee9/<str:pid>/", coffee9),
+    path("coffee10", coffee10),
+    path("coffee11", coffee11),
 ]
 
 urlpatterns += [
     path("", include("cafe.urls"))
+]
+
+urlpatterns += [
+    path("mycookie1",  mycookie1),
+    path("mycookie2",  mycookie2),
+    path("mycookie3",  mycookie3),
+    path("mycookie4",  mycookie4),
 ]

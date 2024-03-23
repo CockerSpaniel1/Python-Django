@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="{% static 'css/mystyle.css' %}" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>產品細項介紹</h1>
+    <hr>
+    <h3>您選擇的咖啡是:{{product.name}}</h3>
+
+    <p>咖啡編號: {{product.pid}}</p>
+    <p>咖啡名稱: {{product.name}}</p>
+    <p>咖啡價格: {{product.price}}</p>
+    <p>咖啡尺寸: {{product.size}}</p>
+    <a href="/coffee8">產品資訊</a>
+    
+</body>
+</html>
