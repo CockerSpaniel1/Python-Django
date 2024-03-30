@@ -201,12 +201,45 @@ def mycookie3(request):
 
 def mycookie4(request):
     myredirect = redirect("/mycookie2")
-    myredirect.set_cookie("is_login")
-    myredirect.set_cookie("username")
-    myredirect.set_cookie("password")
+    myredirect.delete_cookie("is_login")
+    myredirect.delete_cookie("username")
+    myredirect.delete_cookie("password")
     return myredirect
 
 
   
 
+def mysession1(request):
+    if request.method =="GET":
+        return render(request,"session/mysession1.html")
 
+    username=request.POST.get('username')
+    password =request.POST.get("password")
+
+    userobj=UserInfo.objects.filter(
+        username=username,password=password).first()
+    
+    if not userobj:
+        return redirect("/mysession1")
+    else:
+        request.session["is_login"] = True
+        request.session["username"] = username
+        request.session["password"] = password
+        return redirect("/mysession2")
+
+
+def mysession2(request):
+    status = request.session.get("is_login")
+    username = request.session.get("username")
+    password = request.session.get("password")
+
+    if not status:
+        return redirect("./session2")
+    
+    return render(request,"session/mysession2.html", locals())
+
+def mysession3(request):
+    request.session.flush()
+
+    
+    return render(request,"session/mysession3.html")

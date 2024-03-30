@@ -52,3 +52,9 @@ urlpatterns += [
     path("mycookie3",  mycookie3),
     path("mycookie4",  mycookie4),
 ]
+
+urlpatterns += [
+    path("mysession1",  mysession1),
+    path("mysession2",  mysession2),
+    path("mysession3",  mysession3),
+]
