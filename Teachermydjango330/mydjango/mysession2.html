@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}  Session And csrf {% endblock%}
+{% block content %} 
+    <p>登入狀態：{{status}}</p>
+    <p>帳號：{{username}}</p>
+    <p>密碼：{{password}}</p>
+
+    <a href="/mysession3">LOGOUT</a>
+{% endblock %}

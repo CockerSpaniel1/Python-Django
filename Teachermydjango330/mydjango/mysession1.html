@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}  Session And csrf {% endblock%}
+{% block content %} 
+<form action="" method="post">  
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="帳號" ><br>
+    <input type="password" name="password" placeholder="密碼" ><br>
+    <input type="submit" value="LOGIN" ><br>
+</form>
+{% endblock %}
