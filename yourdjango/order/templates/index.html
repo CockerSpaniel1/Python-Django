@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
-{% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Welcome </h1>
+{% block title %} Cafe Time {% endblock%}
+<!-- {% block user%}
+
+{% if status %}
+<span>{{uname}}您好</span>
+<a href="/logout">登出</a>
+{% else %}
+<a href="#">登入</a>
+{% endif %}
+
+{% endblock%} -->
+
+{% block content %}
+    <h1>welcome Order System</h1>
+    <hr>
+    <!-- <a href="/register">會員註冊測試</a> -->
+{% endblock %}    
 </body>
 </html>
-
-{% endblock %}

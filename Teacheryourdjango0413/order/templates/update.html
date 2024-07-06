@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {# form #}
+    <h3>{{form.email.value}}</h3>
+    <hr>
+    <input type="email" name="{{ form.email.name }}" value="{{ form.email.value }}" readonly><br>
+    <input type="password" name="{{ form.pwd.name }}" value="{{ form.pwd.value }}"><br>
+    {{form.uname}}
+    <input type="submit" value="UPDATE">
+</form>
+{% endblock %}  
